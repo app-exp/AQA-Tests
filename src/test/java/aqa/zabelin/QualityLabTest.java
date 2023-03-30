@@ -12,13 +12,18 @@ public class QualityLabTest {
         String body = "Really true! (c)ZABELIN";
         String login = Settings.getUrlMailRuLogin();
         String pass = Settings.getUrlMailRuPass();
+        boolean isTrue = true;
 
-        MainPage mainPage  = new LoginPage()
-                .setLogin(login)
-                .setPass(pass)
-                .writeEMail()
-                .sendEMail(login, title, body);
+        try {
+            MainPage mainPage = new LoginPage()
+                    .setLogin(login)
+                    .setPass(pass)
+                    .writeEMail()
+                    .sendEMail(login, title, body);
+        } catch (Exception e) {
+            isTrue = false;
+        }
 
-        Assertions.assertTrue(true);
+        Assertions.assertTrue(isTrue);
     }
 }

@@ -2,7 +2,7 @@
 
 <h2>There are examples of AQA tests written by Alex Zabelin here</h2>
 
-<h3>To run the test, use the class MainSeleniumTest</h3>
+<h3>To run the test, use the class \src\test\java\aqa\zabelin\MainSeleniumTest</h3>
 
 <h3>Technologies:</h3>
 Windows 10 Pro 19044.1645 x64<br>
