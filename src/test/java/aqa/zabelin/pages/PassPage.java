@@ -1,6 +1,7 @@
 package aqa.zabelin.pages;
 
 import aqa.zabelin.SeleniumTestHelper;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,14 +18,14 @@ public class PassPage extends SeleniumTestHelper {
         PageFactory.initElements(driver, this);
     }
 
-    public MainPage setPassAndSend(String pass) {
-        passwordField.sendKeys(pass);
+    public MainPage setPassAndSend(String password) {
+        passwordField.sendKeys(password);
         loginButton.click();
         return new MainPage();
     }
 
-    public ReceivedPage setPassAndCheck(String pass) {
-        passwordField.sendKeys(pass);
+    public ReceivedPage setPassAndCheck(String password) {
+        passwordField.sendKeys(password);
         loginButton.click();
         return new ReceivedPage();
     }

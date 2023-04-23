@@ -15,20 +15,20 @@ public class SeleniumTestMailRu {
         String body = "Some text! (c)ZABELIN";
 
         String login = Settings.getUrlMailRuLogin();
-        String pass = Settings.getUrlMailRuPass();
+        String password = Settings.getUrlMailRuPass();
 
         System.out.println("SENT CHECK STRING: " + sentString);
 
         boolean sentResult = new LoginPage()
-                .setLogin(login)
-                .setPassAndSend(pass)
+                .setLogin(login, "SENDING TEST")
+                .setPassAndSend(password)
                 .writeEMail()
                 .sendEMail(login, title, body)
-                .checkSent();
+                .checkSent(login);
 
         boolean receivedResult = new LoginPage()
-                .setLogin(login)
-                .setPassAndCheck(pass)
+                .setLogin(login, "RECEIVING TEST")
+                .setPassAndCheck(password)
                 .checkReceived(sentString);
 
         Assertions.assertEquals(sentResult, receivedResult);

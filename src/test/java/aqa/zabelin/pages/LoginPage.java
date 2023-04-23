@@ -5,6 +5,7 @@ import aqa.zabelin.SeleniumTestHelper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class LoginPage extends SeleniumTestHelper {
 
@@ -19,7 +20,11 @@ public class LoginPage extends SeleniumTestHelper {
         PageFactory.initElements(driver, this);
     }
 
-    public PassPage setLogin(String login) {
+    public PassPage setLogin(String login, String header) {
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.querySelector('h3[data-test-id=header-text]').textContent='" + header + "';");
+
         loginField.sendKeys(login);
         nextButton.click();
         return new PassPage();
