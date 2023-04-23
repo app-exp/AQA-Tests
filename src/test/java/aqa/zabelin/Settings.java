@@ -9,11 +9,12 @@ public abstract class Settings {
 
     static {
         try {
-            prop.load(TestHelperSelenium.class.getClassLoader().getResourceAsStream("settings.properties"));
+            prop.load(SeleniumTestHelper.class.getClassLoader().getResourceAsStream("settings.properties"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
+
     private static String loadProperty(String key) {
         return prop.getProperty(key).trim();
     }

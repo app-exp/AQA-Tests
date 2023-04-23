@@ -1,11 +1,11 @@
 package aqa.zabelin.pages;
 
-import aqa.zabelin.TestHelperSelenium;
+import aqa.zabelin.SeleniumTestHelper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class EMailPage extends TestHelperSelenium {
+public class EMailPage extends SeleniumTestHelper {
 
     @FindBy(xpath = "//div[starts-with(@class, 'contactsContainer')]//input[starts-with(@class, 'container') and @type='text']")
     private WebElement eMailField;
@@ -23,11 +23,11 @@ public class EMailPage extends TestHelperSelenium {
         PageFactory.initElements(driver, this);
     }
 
-    public MainPage sendEMail(String eMail, String title, String body) {
+    public SentPage sendEMail(String eMail, String title, String body) {
         eMailField.sendKeys(eMail);
         subjectField.sendKeys(title);
         bodyField.sendKeys(body);
         sendButton.click();
-        return new MainPage();
+        return new SentPage();
     }
 }

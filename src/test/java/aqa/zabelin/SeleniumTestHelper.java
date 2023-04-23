@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-public class TestHelperSelenium {
+public class SeleniumTestHelper {
 
     protected static WebDriver driver;
 

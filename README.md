@@ -14,3 +14,9 @@ Java<br>
 Selenium<br>
 JUnit<br>
 Web-site mail.ru<br>
+
+
+<h3>Prerequisites:</h3>
+Before  the SeleniumTestMailRu.runTest() starting you have to switch OFF
+"Mail for yourself" and "Grouping by sender"
+options on mail.ru website.<br>

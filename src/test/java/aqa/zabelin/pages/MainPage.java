@@ -1,11 +1,11 @@
 package aqa.zabelin.pages;
 
-import aqa.zabelin.TestHelperSelenium;
+import aqa.zabelin.SeleniumTestHelper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MainPage extends TestHelperSelenium {
+public class MainPage extends SeleniumTestHelper {
 
     @FindBy(xpath = "//a[contains(@href, 'compose') and starts-with(@class, 'compose')]")
     private WebElement writeButton;
@@ -15,7 +15,6 @@ public class MainPage extends TestHelperSelenium {
     }
 
     public EMailPage writeEMail() {
-        //https://e.mail.ru/compose/
         writeButton.click();
         return new EMailPage();
     }
