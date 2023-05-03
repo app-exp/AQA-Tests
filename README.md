@@ -16,7 +16,7 @@ JUnit<br>
 Web-site mail.ru<br>
 
 
-<h3>Presets:</h3>
+<h3>Preconditions/Presets:</h3>
 Before SeleniumTestMailRu.runTest() you have to switch OFF
 "Mail for myself" and "Grouping by sender"
 options on mail.ru website.<br>
